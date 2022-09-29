@@ -1,0 +1,68 @@
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: limegreen;
+  }
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.monitor {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: end;
+  padding: 10px;
+  height: 40vh;
+  width: 500px;
+  border-radius: 20px;
+  border: 10px solid #D1D1C0;
+  background-color: black;
+  box-shadow: 3px 1px 1px gray;
+}
+.monitor__current-line {
+  color: limegreen;
+  border-right: 0.15em solid limegreen;
+  padding-right: 5px;
+  animation: blink-caret 0.5s step-end infinite;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(15, 50px);
+  grid-template-rows: minmax(50px, auto) repeat(4, 50px);
+  background-color: #D1D1C0;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 3px 1px 1px gray;
+  opacity: 1;
+  transition: 0.5s;
+}
+.keyboard__key {
+  border-radius: 8px 8px 15px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 1px 1px gray;
+}
+.keyboard__key--span-two {
+  grid-column: span 2;
+}
+.keyboard__key--span-three {
+  grid-column: span 3;
+}
+.keyboard__key--space {
+  grid-column: span 7;
+}
+.keyboard__key--down {
+  opacity: 0.5;
+  background-color: lightblue;
+  transition: 0.1s;
+}
