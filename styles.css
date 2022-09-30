@@ -11,14 +11,15 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
 }
 
 .monitor {
   display: flex;
-  flex-direction: row;
-  justify-content: right;
-  align-items: end;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   padding: 10px;
   height: 40vh;
   width: 500px;
@@ -27,11 +28,27 @@ body {
   background-color: black;
   box-shadow: 3px 1px 1px gray;
 }
-.monitor__current-line {
+.monitor__previous-line {
+  padding: 0;
   color: limegreen;
+  width: inherit;
+  text-align: left;
+  word-wrap: break-word;
+}
+.monitor__current-line {
+  padding: 0;
+  color: limegreen;
+  width: inherit;
+  text-align: left;
+}
+.monitor__current-line--text {
+  width: 50px;
+  word-wrap: break-word;
+}
+.monitor__current-line--typebar {
   border-right: 0.15em solid limegreen;
-  padding-right: 5px;
-  animation: blink-caret 0.5s step-end infinite;
+  padding-right: 2px;
+  animation: blink-caret 1s step-end infinite;
 }
 
 .keyboard {
