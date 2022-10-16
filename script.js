@@ -7,7 +7,34 @@ For this project we want to
 - On keydown - change the visual transition
 - On transition (key up) - change the visual transition
 */
-
+const morse = {
+  a: '.-',
+  b: '-...',
+  c: '-.-.',
+  d: '-..',
+  e: '.',
+  f: '..-.',
+  g: '--.',
+  h: '....',
+  i: '..',
+  j: '.---',
+  k: '-.-',
+  l: '.-..',
+  m: '--',
+  n: '-.',
+  o: '---',
+  p: '.--.',
+  q: '--.-',
+  r: '._.',
+  s: '...',
+  t: '-',
+  u: '..-',
+  v: '...-',
+  w: '.--',
+  x: '-..-',
+  y: '-.--',
+  z: '--..',
+}
 
 function removeTransition(e) {
   const key = document.querySelector(`button[data-key="${e.keyCode}"]`);
@@ -88,9 +115,9 @@ function keyPress(e){
       break;
     default:
       if (caps == 0){
-        line.innerText += (key.innerText).toLowerCase();
+        line.innerText += morse[(key.innerText).toLowerCase()];
       } else {
-        line.innerText += key.innerText;
+        line.innerText += morse[key.innerText];
       }
       break;
   }
